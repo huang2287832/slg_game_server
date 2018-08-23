@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "enumtype.proto";
+
+package proto;
+
+// 查看排行榜
+message ShowRankReq {
+    RankEnum key   = 1;             // 排行榜枚举
+}
+
+// 登录响应
+message ShowRankResp {
+    int32 my_rank = 1;              // 我的排名
+    string nick_name  = 2;          // 我的昵称
+    repeated Rank rank_obj = 3;     // 排行榜属性
+}
+
+message Rank {
+    int32 rank_num = 1;         // 名次
+    PlayerAttr player_attr = 3;
+}

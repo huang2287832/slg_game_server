@@ -1,0 +1,15 @@
+syntax = "proto3";
+package AHotfix.Config;
+
+// key:["id"]
+message CfgPlayerAttr{
+	int32 id = 1;		//唯一id
+	string key = 2;		//系统key
+	int32 initData = 3;		//初始值
+	int32 incData = 4;		//增量值
+	int32 maxData = 5;		//最大值
+}
+
+message PlayerAttrConfigData{
+	repeated CfgPlayerAttr config = 1;
+}

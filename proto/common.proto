@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "enumtype.proto";
+
+package proto;
+
+// -------------------------------------------------------
+//                      测试协议
+//  封包格式：包头 + 包体    包头8个字节，协议号cmd 4个字节，包体长度2个字节，预留2个字节
+// -------------------------------------------------------
+
+// 心跳请求
+message HeartBeatReq {}
+
+// 心跳请求
+message HeartBeatResp {
+    int64 server_sec = 1;
+}
+
+// 服务端和客户端交互统一的错误码提示消息
+message ErrResp {
+    ProtoCmd cmd = 1;
+    int32 err_code = 2;
+    string err_msg = 3;
+}

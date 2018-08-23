@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "enumtype.proto";
+
+package proto;
+
+// 登录请求
+message LoginReq {
+    string acct_name   = 1;             // 账号名
+}
+
+// 登录响应
+message LoginResp {
+    PlayerAttr player_attr = 1;              // 玩家属性
+}
+
+// 退出请求
+message LogOutReq {}

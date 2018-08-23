@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package proto;
+
+enum ProtoCmd {
+    CMD_PASS            = 0;
+    CMD_ErrResp         = 1;
+    CMD_HeartBeatReq    = 2;
+    CMD_HeartBeatResp   = 3;
+    CMD_LoginReq        = 1001;
+    CMD_LoginResp       = 1002;
+    CMD_LogoutReq       = 1003;
+
+    CMD_ShowRankReq     = 2001;
+    CMD_ShowRankResp    = 2002;
+
+}
+
+enum RankEnum {
+    Rank_Pass           = 0;
+    Rank_Power          = 1;
+}
+
+message PlayerAttr {
+    int32 user_id           = 1;    // userID
+    string nick_name        = 2;    // 昵称
+    string sign             = 3;    // 签名
+    int32 X 			    = 4;	// X坐标
+    int32 Y 			    = 5;    // Y坐标
+    int32 Country           = 6;    // 玩家所属国家
+    int32 Level 			= 7;    // 等级
+    int32 Exp 			    = 8;    // 经验值
+    int32 Wood 			    = 9;    // 木材
+    int32 Iron 			    = 10;   // 铁矿
+    int32 Stone 			= 11;   // 石料
+    int32 Forage 			= 12;   // 粮草
+    int32 Gold 			    = 13;   // 金币
+    int32 Diamond 		    = 14;   // 钻石
+    int32 BindDiamond 		= 15;   // 绑定钻石
+    int32 Decree 			= 16;   // 政令
+    int32 ArmyOrder 		= 17;   // 军令
+    int32 Power 			= 18;   // 势力值
+    int32 Domain 			= 19;   // 领地个数
+
+}
