@@ -18,7 +18,7 @@ const (
 
 
 func main() {
-	conn, err := net.Dial("tcp", "192.168.60.130:8005")
+	conn, err := net.Dial("tcp", "127.0.0.1:8005")
 	fmt.Println("----------- client start !!!")
 	if err != nil{
 		fmt.Println("Error dialing", err.Error())
