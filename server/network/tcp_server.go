@@ -28,7 +28,7 @@ type client struct {
 
 func init()  {
 	// create listener
-	listener, err := net.Listen("tcp", "192.168.60.130:8005")
+	listener, err := net.Listen("tcp", "127.0.0.1:8005")
 	defer listener.Close()
 	db.NewIncrease()
 	global.NewGlobalPlayers()
