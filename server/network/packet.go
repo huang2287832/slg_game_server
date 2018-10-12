@@ -48,8 +48,8 @@ func RecvLTVPacket(reader net.Conn) (cmd proto3.ProtoCmd, tempId uint16, msg pro
 	// 最终获取消息体内容
 	cmd = proto3.ProtoCmd(msgId)
 	pbData := user.Handler.GetPbData(cmd)
-	fmt.Printf("---------cmd = %d, msgid: %d, pbdata: %d\n", cmd, cmd, pbData)
-	proto.Unmarshal(body, pbData)
+	msg = reflect.New(reflect.TypeOf(pbData).Elem()).Interface()
+	proto.Unmarshal(body, msg.(proto.Message))
 
 	return cmd, tempId, pbData, nil
 }
